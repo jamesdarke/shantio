@@ -57,9 +57,6 @@ PORT = environ.get('PORT', SERVER_PORT)
 web = Popen([f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}"], shell=True)
 alive = Popen(["python3", "alive.py"])
 
-srun(["chmod", "+x", "aria.sh"])
-srun(["./aria.sh"], shell=True)
-
 Interval = []
 DRIVES_NAMES = []
 DRIVES_IDS = []
