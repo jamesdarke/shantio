@@ -1,3 +1,4 @@
+python3
 anytree
 appdirs
 aria2p
