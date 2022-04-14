@@ -56,11 +56,7 @@ except:
 PORT = environ.get('PORT', SERVER_PORT)
 web = Popen([f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}"], shell=True)
 alive = Popen(["python3", "alive.py"])
-srun(["qbittorrent-nox", "-d", "--profile=."])
-if not ospath.exists('.netrc'):
-    srun(["touch", ".netrc"])
-srun(["cp", ".netrc", "/root/.netrc"])
-srun(["chmod", "600", ".netrc"])
+
 srun(["chmod", "+x", "aria.sh"])
 srun(["./aria.sh"], shell=True)
 
